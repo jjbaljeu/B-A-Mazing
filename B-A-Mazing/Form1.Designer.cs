@@ -36,6 +36,8 @@ namespace B_A_Mazing
             this.numericUpDownPrunning = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBoxMessages = new System.Windows.Forms.RichTextBox();
+            this.buttonAMazeII = new System.Windows.Forms.Button();
+            this.buttonPrunning = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMazeInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrunning)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@ namespace B_A_Mazing
             // buttonAMaze
             // 
             this.buttonAMaze.Enabled = false;
-            this.buttonAMaze.Location = new System.Drawing.Point(307, 48);
+            this.buttonAMaze.Location = new System.Drawing.Point(419, 164);
             this.buttonAMaze.Name = "buttonAMaze";
             this.buttonAMaze.Size = new System.Drawing.Size(190, 47);
             this.buttonAMaze.TabIndex = 1;
@@ -64,7 +66,7 @@ namespace B_A_Mazing
             // buttonSaveImage
             // 
             this.buttonSaveImage.Enabled = false;
-            this.buttonSaveImage.Location = new System.Drawing.Point(571, 48);
+            this.buttonSaveImage.Location = new System.Drawing.Point(786, 48);
             this.buttonSaveImage.Name = "buttonSaveImage";
             this.buttonSaveImage.Size = new System.Drawing.Size(179, 47);
             this.buttonSaveImage.TabIndex = 2;
@@ -75,7 +77,7 @@ namespace B_A_Mazing
             // pictureBoxMazeInput
             // 
             this.pictureBoxMazeInput.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxMazeInput.Location = new System.Drawing.Point(48, 131);
+            this.pictureBoxMazeInput.Location = new System.Drawing.Point(48, 165);
             this.pictureBoxMazeInput.Name = "pictureBoxMazeInput";
             this.pictureBoxMazeInput.Size = new System.Drawing.Size(335, 250);
             this.pictureBoxMazeInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -84,12 +86,12 @@ namespace B_A_Mazing
             // 
             // numericUpDownPrunning
             // 
-            this.numericUpDownPrunning.Location = new System.Drawing.Point(649, 131);
+            this.numericUpDownPrunning.Location = new System.Drawing.Point(543, 96);
             this.numericUpDownPrunning.Name = "numericUpDownPrunning";
             this.numericUpDownPrunning.Size = new System.Drawing.Size(101, 31);
             this.numericUpDownPrunning.TabIndex = 4;
             this.numericUpDownPrunning.Value = new decimal(new int[] {
-            15,
+            100,
             0,
             0,
             0});
@@ -98,7 +100,7 @@ namespace B_A_Mazing
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(488, 133);
+            this.label1.Location = new System.Drawing.Point(382, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 25);
             this.label1.TabIndex = 5;
@@ -106,17 +108,41 @@ namespace B_A_Mazing
             // 
             // richTextBoxMessages
             // 
-            this.richTextBoxMessages.Location = new System.Drawing.Point(434, 190);
+            this.richTextBoxMessages.Location = new System.Drawing.Point(649, 224);
             this.richTextBoxMessages.Name = "richTextBoxMessages";
             this.richTextBoxMessages.Size = new System.Drawing.Size(316, 191);
             this.richTextBoxMessages.TabIndex = 6;
             this.richTextBoxMessages.Text = "";
             // 
+            // buttonAMazeII
+            // 
+            this.buttonAMazeII.Enabled = false;
+            this.buttonAMazeII.Location = new System.Drawing.Point(419, 241);
+            this.buttonAMazeII.Name = "buttonAMazeII";
+            this.buttonAMazeII.Size = new System.Drawing.Size(190, 46);
+            this.buttonAMazeII.TabIndex = 7;
+            this.buttonAMazeII.Text = "A-Maze II";
+            this.buttonAMazeII.UseVisualStyleBackColor = true;
+            this.buttonAMazeII.Click += new System.EventHandler(this.buttonAMazeII_Click);
+            // 
+            // buttonPrunning
+            // 
+            this.buttonPrunning.Enabled = false;
+            this.buttonPrunning.Location = new System.Drawing.Point(419, 35);
+            this.buttonPrunning.Name = "buttonPrunning";
+            this.buttonPrunning.Size = new System.Drawing.Size(190, 46);
+            this.buttonPrunning.TabIndex = 8;
+            this.buttonPrunning.Text = "Prunning";
+            this.buttonPrunning.UseVisualStyleBackColor = true;
+            this.buttonPrunning.Click += new System.EventHandler(this.buttonPrunning_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1009, 450);
+            this.Controls.Add(this.buttonPrunning);
+            this.Controls.Add(this.buttonAMazeII);
             this.Controls.Add(this.richTextBoxMessages);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDownPrunning);
@@ -142,6 +168,8 @@ namespace B_A_Mazing
         private System.Windows.Forms.NumericUpDown numericUpDownPrunning;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBoxMessages;
+        private System.Windows.Forms.Button buttonAMazeII;
+        private System.Windows.Forms.Button buttonPrunning;
     }
 }
 
