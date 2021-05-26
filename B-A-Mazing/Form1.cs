@@ -73,6 +73,8 @@ namespace B_A_Mazing
             Position[] Path = new Position[2];
             Position[] PathNew;
             List<Position[]> PathList = new List<Position[]>();
+            int FileCounter;            //Used to make animated GIF
+            FileCounter = 1;            //Used to make animated GIF
 
             richTextBoxMessages.Text = richTextBoxMessages.Text + "\n------------------";
 
@@ -87,6 +89,8 @@ namespace B_A_Mazing
                     CurrentPosition.Y = CurrentPosition.Y + 1;
                     Path[1] = CurrentPosition;
                     PathList.Add(Path);
+                    // FileCounter = FileCounter + 1;
+                    // AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
                     break;
                 }
             }
@@ -98,8 +102,6 @@ namespace B_A_Mazing
 
             DateTime StartTimeSolving, EndTimeSolving;
             StartTimeSolving = DateTime.Now;
-            int FileCounter;            //Used to make animated GIF
-            FileCounter = 1;            //Used to make animated GIF
 
             while (PathList.Count() > 0)
             {
@@ -157,8 +159,8 @@ namespace B_A_Mazing
                 //This path has been processed so remove it from the list
                 PathList.RemoveAt(0);
 
-                //                FileCounter = FileCounter + 1;
-                //                AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
+                // FileCounter = FileCounter + 1;
+                // AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
 
             }
 
@@ -174,6 +176,8 @@ namespace B_A_Mazing
                     CurrentPosition = PathList.Last()[PathCounter];
                     AMazeImage.SetPixel(CurrentPosition.X, CurrentPosition.Y, Color.FromArgb(0, 255, 0));
                 }
+                // FileCounter = FileCounter + 1;
+                // AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
             }
             else
             {
@@ -203,6 +207,10 @@ namespace B_A_Mazing
             List<Position> Path = new List<Position>();
             List<int> AlternativePaths = new List<int>();
             int ExitFound;
+            int FileCounter;            //Used to make animated GIF
+            FileCounter = 1;
+            DateTime StartTimeSolving, EndTimeSolving;
+
 
             richTextBoxMessages.Text = richTextBoxMessages.Text + "\n------------------";
 
@@ -218,6 +226,8 @@ namespace B_A_Mazing
                     CurrentPosition.Y = CurrentPosition.Y + 1;
                     Path.Add(CurrentPosition);
                     ExitFound = 1;
+                    // FileCounter = FileCounter + 1;
+                    // AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
                     break;
                 }
             }
@@ -227,11 +237,8 @@ namespace B_A_Mazing
                 return;
             };
 
-            DateTime StartTimeSolving, EndTimeSolving;
-            StartTimeSolving = DateTime.Now;
-            int FileCounter;            //Used to make animated GIF
-            FileCounter = 1;            //Used to make animated GIF
 
+            StartTimeSolving = DateTime.Now;
 
             while (Path.Count > 0)
             {
@@ -304,16 +311,14 @@ namespace B_A_Mazing
                     { Path.Clear(); }
                 }
 
-
-                //                FileCounter = FileCounter + 1;
-                //                AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
-
+                // FileCounter = FileCounter + 1;
+                // AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
             }
 
             EndTimeSolving = DateTime.Now;
             if (Path.Count() > 0)
             {
-                richTextBoxMessages.Text = richTextBoxMessages.Text + "\nSolving time (III): \t" + (EndTimeSolving - StartTimeSolving).TotalMilliseconds + " mSec";
+                richTextBoxMessages.Text = richTextBoxMessages.Text + "\nSolving time (II): \t" + (EndTimeSolving - StartTimeSolving).TotalMilliseconds + " mSec";
                 richTextBoxMessages.Text = richTextBoxMessages.Text + "\nLength: \t\t" + Path.Count;
 
                 //The last path in the list contains the shortest route, color this path green
@@ -322,6 +327,8 @@ namespace B_A_Mazing
                     CurrentPosition = Path[PathCounter];
                     AMazeImage.SetPixel(CurrentPosition.X, CurrentPosition.Y, Color.FromArgb(0, 255, 0));
                 }
+                // FileCounter = FileCounter + 1;
+                // AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
             }
             else
             {
@@ -346,6 +353,8 @@ namespace B_A_Mazing
             bool DeadEndsFound;
             DateTime StartTimePrunning = new DateTime();
             DateTime EndTimePrunning = new DateTime();
+            int FileCounter;
+            FileCounter = 1;
 
             richTextBoxMessages.Text = richTextBoxMessages.Text + "\n------------------";
 
@@ -372,6 +381,8 @@ namespace B_A_Mazing
                                 {
                                     AMazeImage.SetPixel(CurrentPosition.X, CurrentPosition.Y, Color.FromArgb(0, 0, 128));
                                     DeadEndsFound = true;
+                                    // FileCounter = FileCounter + 1;
+                                    // AMazeImage.Save(ImagesPath + "Maze" + FileCounter + ".jpg"); //Used to make animated GIF
                                 }
                             }
                         }
